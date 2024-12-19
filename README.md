@@ -20,7 +20,10 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 python app.py
+```
 
 
-Security Headers and CORS: For extra security headers or cross-origin access, consider using Flask-CORS and Flask-Talisman.
-Frontend Styling Library: For a React UI under a strict Content Security Policy (CSP), I would prefer Chakra UI because it provides a good balance between flexibility and security, and it has built-in support for accessibility.
+# Security Headers and CORS:
+ For extra security headers or cross-origin access, consider using Flask-CORS and Flask-Talisman.
+## Frontend Styling Library: 
+For a React UI under a strict Content Security Policy (CSP), I would prefer Chakra UI because it provides a good balance between flexibility and security, and it has built-in support for accessibility.
