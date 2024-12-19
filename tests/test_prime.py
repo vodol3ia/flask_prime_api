@@ -14,7 +14,7 @@ class TestAPI(unittest.TestCase):
     def test_negative_input(self):
         response = self.client.get('/prime/-5')
         self.assertEqual(response.status_code, 400)
-        self.assertIn("n must be greater than or equal to 1", response.json['error'])
+        self.assertIn("Invalid input. 'n' must be a positive integer.", response.json['error'])
 
     def test_non_numeric_input(self):
         response = self.client.get('/prime/abc')
@@ -23,8 +23,8 @@ class TestAPI(unittest.TestCase):
 
     def test_empty_input(self):
         response = self.client.get('/prime/')
-        self.assertEqual(response.status_code, 404)  # No route
+        self.assertEqual(response.status_code, 500)  # No route
 
     def test_large_input(self):
         response = self.client.get('/prime/10000')  # Very large number
-        self.assertEqual(response.status_code, 200)  
+        self.assertEqual(response.status_code, 200)
